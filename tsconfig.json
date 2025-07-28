@@ -1,31 +1,24 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": [
-      "es2022"
-    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "lambda/dist",
+    "lib": ["es2022"],
     "declaration": true,
+    "declarationMap": false,  // Deshabilitar mapas de declaración
+    "sourceMap": false,       // Deshabilitar source maps
     "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": false,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "experimentalDecorators": true,
-    "strictPropertyInitialization": false,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "esModuleInterop": true,
+    "skipLibCheck": true,     // Omitir verificación de tipos en archivos de definición
+    "forceConsistentCasingInFileNames": true
   },
+  "include": [
+    "lambda/**/*.ts"  // Especificar explícitamente qué archivos compilar
+  ],
   "exclude": [
     "node_modules",
-    "cdk.out"
+    "cdk.out",
+    "lambda/dist"  // Excluir directorio de salida
   ]
 }

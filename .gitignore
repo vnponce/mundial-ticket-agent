@@ -1,8 +1,60 @@
+# CDK & TypeScript specific
 *.js
 !jest.config.js
 *.d.ts
 node_modules
-
-# CDK asset staging directory
 .cdk.staging
 cdk.out
+/dist/
+
+# Lambda functions - NOT ignoring lambda/dist as it contains compiled code that should be versioned
+# But ignore node_modules inside lambda directories
+lambda/*/node_modules
+lambda/*/.env
+
+# Environment variables
+.env
+.env.*
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# AWS CDK context
+cdk.context.json
+
+# Dependency directories
+jspm_packages/
+.npm/
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Optional REPL history
+.node_repl_history
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Testing
+/temp
+/tmp
+/junit.xml
+
+# Parcel build cache
+.cache
+.parcel-cache
